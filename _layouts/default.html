@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/assets/css/style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+</head>
+<body>
+  <main>
+    <div class="title-container">
+    <h1>
+        <img src="/assets/images/butterflies-red.gif" alt="butterflies" width="50" margin-top="20px">
+        {{ page.title }}
+        <img src="/assets/images/butterflies-red.gif" alt="butterflies" width="50" margin-top="20px">
+    </h1>
+    <div class="navbar-container">
+        <nav>
+          <ul>
+            <img src="/assets/images/nyan-cat.gif" alt="nyan cat" width="50" margin-top="20px">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+          </ul>
+        </nav>
+    </div>
+</div>
+    {{ content }}
+  </main>
+  <footer>
+    <p>&copy; 2025 Alina's WorldWideWeb</p>
+  </footer>
+</body>
+</html>

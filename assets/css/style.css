@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'PixelifySans';
+    src: url('../fonts/pixelify-sans-latin-400-normal.woff2') format('woff2'),
+         url('../fonts/pixelify-sans-latin-400-normal.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'PixelifySans';
+    src: url('../fonts/pixelify-sans-latin-500-normal.woff2') format('woff2'),
+         url('../fonts/pixelify-sans-latin-500-normal.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'PixelifySans';
+    src: url('../fonts/pixelify-sans-latin-600-normal.woff2') format('woff2'),
+         url('../fonts/pixelify-sans-latin-600-normal.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'PixelifySans';
+    src: url('../fonts/pixelify-sans-latin-700-normal.woff2') format('woff2'),
+         url('../fonts/pixelify-sans-latin-700-normal.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  h1 {
+    font-family: 'PixelifySans', sans-serif;
+    font-weight: 600; 
+    font-size: 3em;
+    margin: 0;
+    line-height: 2;
+    color: white;
+    text-shadow: -2px -2px 0 rgb(50, 45, 139), 
+    2px -2px 0 rgb(50, 45, 139), 
+    -2px 2px 0 rgb(50, 45, 139),  
+    2px 2px 0 rgb(50, 45, 139);
+  }
+
+  .title-container {
+    background-color: hotpink;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-container {
+    background-color: white; /* White background */
+    outline: 2px solid rgb(50, 45, 139); 
+    width: 100%; /* Full width of the screen */
+    box-shadow: inset 0px 0px 15px rgba(50, 45, 139, 0.9); /* Inner black shadow */
+    padding: 10px 0; 
+    text-align: center; /* Center the navbar content */
+    margin: 0;
+  }
+
+  .navbar-container a {
+    display: inline-block; /* Makes the links behave like buttons */
+    background-color: white; /* Button background color */
+    outline: 2px solid rgb(50, 45, 139); 
+    color:  rgb(50, 45, 139); /* Text color */
+    padding: 10px 20px; /* Add padding inside the buttons */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 0px; /* Rounded corners */
+    box-shadow: inset 0px 0px 10px rgba(50, 45, 139, 0.9); /* Inner black shadow */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+
+  .navbar-container ul {
+    list-style: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Display items horizontally */
+    justify-content: left; /* Center the items horizontally */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .navbar-container li {
+    margin: 0 10px; /* Add spacing between buttons */
+  }
+  
+  .navbar-container a:hover {
+    background-color: hotpink; /* Change background color on hover */
+  }
+
+  .navbar-container img {
+    width: 30px; /* Set a fixed width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align the image with text */
+  }
+  
+  /* Apply the font to body text */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'PixelifySans', sans-serif;
+    font-weight: 400; /* Use regular weight for body text */
+  }
