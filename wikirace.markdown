@@ -13,6 +13,7 @@ Click the 'Find Shortest Path Length' button to show the minimum amount of click
 
 WARNING: Please be aware that this scales very quickly. If your links are highly unrelated, this may take 20+ minutes and result in a network error due to RAM memory limitations on the free tier that I am hosting my API on. 
 
+<script src="/assets/js/wikirace.js"></script>
 <form id="wikirace-form" onsubmit="return false;">
   <fieldset>
     <legend>WikiRace Pathfinder</legend>
