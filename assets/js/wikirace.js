@@ -1,6 +1,6 @@
 function extractTitle(url) {
   const title = url.split("/").pop();
-  return title.replace(/_/g, " ");
+  return decodeURIComponent(title).replace(/_/g, " ");
 }
 
 document.addEventListener("DOMContentLoaded", () => {

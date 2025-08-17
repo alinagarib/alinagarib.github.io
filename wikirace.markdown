@@ -9,7 +9,9 @@ To use it, enter start and end wikipedia links, as they appear in the url.
 
 EX: https://en.wikipedia.org/wiki/Death_from_laughter
 
-It will first show the minimum amount of clicks to get from link A to B, as a length. If you want to see an optimal path (as there may be many with the same length), click the button to reveal!
+Click the 'Find Shortest Path Length' button to show the minimum amount of clicks to get from link A to B. If you want to see an optimal path (as there may be many with the same length), a button will appear to reveal the solution! Otherwise, you can reset and try another set of links.
+
+WARNING: Please be aware that this scales very quickly. If your links are highly unrelated, this may take 20+ minutes and result in a network error due to RAM memory limitations on the free tier that I am hosting my API on. 
 
 <form id="wikirace-form" onsubmit="return false;">
   <fieldset>
@@ -42,5 +44,5 @@ It will first show the minimum amount of clicks to get from link A to B, as a le
 
 
 You can find the source code for the API at GitHub:
-[WikiRace-Revamp](https://github.com/alinagarib/WikiRace-Revamp)
+[WikiRaceAPI](https://github.com/alinagarib/WikiRaceAPI)
 

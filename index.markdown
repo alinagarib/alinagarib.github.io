@@ -5,4 +5,6 @@
 layout: default
 title: Welcome to Alina's World Wide Web
 ---
-<p>This is the home page<p>
+<div class="center-content">
+  <img src="/assets/images/globe.gif" alt="globe" width="500" margin-bottom="20px">
+</div>

@@ -110,7 +110,7 @@
 }
 
 #wikirace-form label {
-  width: 175px; 
+  width: 12%; 
   font-family: 'PixelifySans', sans-serif; 
   font-weight: 500; 
 }
@@ -159,4 +159,13 @@ legend {
   font-weight: 600; 
   font-size: 1.2em;
   color: rgb(50, 45, 139); 
+}
+
+.center-content {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  margin: 0 auto; 
+  text-align: center;
 }
