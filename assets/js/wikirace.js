@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.getElementById("reset-button");
   const pathButton = document.getElementById("path-button");
   const resultDiv = document.getElementById("result");
-  const apiBaseUrl = "https://wikirace-revamp-production.up.railway.app";
+  const apiBaseUrl = "https://alinasworldwidewebapis-production.up.railway.app/wiki-race";
   let savedPath = [];
 
   lengthButton.addEventListener("click", async () => {
