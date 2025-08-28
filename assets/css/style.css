@@ -346,6 +346,16 @@ h2 {
   padding: 0;
 }
 
+h3 {
+  font-family: 'PixelifySans', sans-serif; 
+  font-weight: 500; 
+  font-size: 1.2em;
+  color: rgb(50, 45, 139); 
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
 /* Artist list styling (mirrors track list) */
 #top-artists {
   max-height: 175px; 
