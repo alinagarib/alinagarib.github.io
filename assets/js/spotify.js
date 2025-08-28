@@ -156,6 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchNowPlaying();
     setInterval(fetchNowPlaying, 15000);
     fetchTopTracks();
-    fetchTopRecent(3, 7);
+    fetchTopRecent(3, 3);
     fetchTopArtists();
 });

@@ -91,4 +91,3 @@ This page is connected to an API endpoint I built and deployed, which connects t
 </div>
 
 <script src="{{ '/assets/js/spotify.js' | relative_url }}"></script>
-
