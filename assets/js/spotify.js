@@ -80,10 +80,12 @@ document.getElementById("time-range-select").addEventListener("change", e => {
     fetchTopTracks(e.target.value);
 });
 
-async function fetchTopRecent(limit = 3, days = 7) {
-    const res = await fetch(`https://alinasworldwidewebapis-production.up.railway.app/spotify-stats/top-recent?limit=${limit}&days=${days}`);
-    const tracks = await res.json();
+async function fetchTopRecent(limit = 3, days = 3) {
+    const res = await fetch(`https://alinasworldwidewebapis-production.up.railway.app/spotify-stats/recent-summary?limit=${limit}&days=${days}`);
+    const data = await res.json();
 
+    const tracks = data.top_tracks; 
+    const totalMinutes = data.minutes_played; 
     const div = document.getElementById("recent-tracks");
 
     if (tracks.length === 0) {
@@ -109,6 +111,10 @@ async function fetchTopRecent(limit = 3, days = 7) {
 
     showTrack(currentIndex);
 
+    if (tracks.length > 0) {
+      document.getElementById("recent-tracks-buttons").style.display = "block";
+    }
+    
     document.getElementById("prev").addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
         showTrack(currentIndex);
@@ -118,6 +124,10 @@ async function fetchTopRecent(limit = 3, days = 7) {
         currentIndex = (currentIndex + 1) % tracks.length;
         showTrack(currentIndex);
     });
+
+  document.getElementById("summary").innerHTML = 
+   `<h3><strong>${totalMinutes}</strong> minutes played in the last ${data.days} days 🎶</h3>`;
+
 }
 
 async function fetchTopArtists(timeRange = "medium_term", limit = 10) {

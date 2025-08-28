@@ -14,11 +14,14 @@ This page is connected to an API endpoint I built and deployed, which connects t
     <legend>On Repeat</legend>
     <div id="recent-tracks-container" style="text-align:center;">
       <div id="recent-tracks" style="display:inline-block; width:220px;"></div>
-      <div id="recent-tracks-buttons" style="margin-top:10px;">
+      <div id="recent-tracks-buttons" style="margin-top:10px; display:none;">
         <button id="prev" style="margin-right:5px;">&#8249; Prev</button>
         <button id="next">Next &#8250;</button>
       </div>
     </div>
+      <div id="summary" style="margin-top:10px; font-size:1.1rem;">
+        <p>Loading summary...</p>
+      </div>
     </fieldset>
 
 <div class="now-and-artists">
