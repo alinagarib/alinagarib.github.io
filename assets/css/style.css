@@ -415,34 +415,30 @@ h3 {
 }
 
 .about-me-container {
-  display: flex; /* Makes the container a flexbox */
+  display: flex; 
   flex-direction: row;
-  gap: 10px; /* Optional: adds space between the fieldsets */
+  gap: 10px; 
 }
 
-/* This is the key change to make the children take up equal space */
 .about-me-container fieldset {
   flex: 1; 
 }
 
 .headshot {
-  float: left; /* Floats the image to the left */
-  margin-right: 20px; /* Adds some space between the image and the text */
-  width: 125px; /* Sets the width */
-  height: 125px; /* Sets the height */
-  border-radius: 75px; /* Makes the image round */
+  float: left; 
+  margin-right: 20px; 
+  width: 125px;
+  height: 125px; 
+  border-radius: 75px; 
 }
 
-/* You might need to adjust the layout of the about-me section */
 .about-me-content {
-  overflow: auto; /* This is important to contain the floated image and prevent it from affecting other elements */
+  overflow: auto; 
 }
 
 #gif-container img {
-  width: 110px;   /* adjust as needed */
-  height: auto;   /* keeps proportions */
-  /* border-radius: 10px; */
-  /* margin: 20px; */
+  width: 110px;  
+  height: auto;   
   align-items: center;
   justify-content: center;
   display: flex;
