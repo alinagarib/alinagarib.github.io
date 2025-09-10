@@ -4,7 +4,7 @@ async function fetchNowPlaying() {
 
     const div = document.getElementById("now-playing");
     if (!data.is_playing) {
-        div.innerHTML = '<h2>Now Playing</h2><img src="/assets/images/no-music.gif" width="200"><p>Not listening to anything right now 🎧</p>';
+        div.innerHTML = '<img src="/assets/images/no-music.gif" width="200"><p>Not listening to anything right now 🎧</p>';
         return;
     }
 

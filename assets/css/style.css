@@ -172,7 +172,7 @@ legend {
 .spotify-container {
   display: flex; 
   justify-content: center;
-  align-items: flex-left; 
+  align-items: stretch; 
   gap: 10px; 
 }
 
@@ -212,7 +212,7 @@ legend {
 }
 
 #top-tracks {
-  max-height: 500px; 
+  max-height: 550px; 
   overflow-y: auto;
   width: 700px; 
   border: 2px solid rgb(50, 45, 139); 
@@ -412,4 +412,35 @@ h3 {
   flex-direction: column;
   align-items: center;    
   width: 50%;            
+}
+
+.about-me-container {
+  display: flex; 
+  flex-direction: row;
+  gap: 10px; 
+}
+
+.about-me-container fieldset {
+  flex: 1; 
+}
+
+.headshot {
+  float: left; 
+  margin-right: 20px; 
+  width: 125px;
+  height: 125px; 
+  border-radius: 75px; 
+}
+
+.about-me-content {
+  overflow: auto; 
+}
+
+#gif-container img {
+  width: 110px;  
+  height: auto;   
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
