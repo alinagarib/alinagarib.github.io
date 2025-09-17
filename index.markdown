@@ -3,6 +3,10 @@ layout: default
 title: Welcome to Alina's World Wide Web
 ---
 
+<div>
+  <p style="color: red">
+  My apologies, but the free trial of the software I was using to host my APIs has ended. I am working on moving to hosting with AWS as soon as I can!!!!</p>
+</div>
 <div class="about-me-container">
   <fieldset>
     <legend>About Me</legend>
@@ -23,6 +27,6 @@ title: Welcome to Alina's World Wide Web
     </div>
   <fieldset>
     <legend>My Resume</legend>
-    <iframe src="/assets/documents/Alina_s_Resume.pdf#toolbar=0" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+    <iframe src="/assets/documents/Alina_Garib_Resume.pdf#toolbar=0" style="width: 100%; height: 100%;" frameborder="0"></iframe>
   </fieldset>
 </div>
