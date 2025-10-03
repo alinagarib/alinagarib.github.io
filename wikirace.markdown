@@ -3,6 +3,10 @@ layout: default
 title: WikiRace
 permalink: /wikirace/
 ---
+<div>
+  <p style="color: red">
+  My apologies, but the free trial of the software I was using to host my APIs has ended. I am working on moving to hosting with AWS as soon as I can!!!!</p>
+</div>
 
 This a WikiRace solver connected to a FastAPI endpoint I built and deployed.
 To use it, enter start and end wikipedia links, as they appear in the url.

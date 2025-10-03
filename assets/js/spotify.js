@@ -1,5 +1,6 @@
+
 async function fetchNowPlaying() {
-    const res = await fetch("https://alinasworldwidewebapis-production.up.railway.app/spotify-stats/now-playing");
+    const res = await fetch(`${API_BASE_URL}now-playing`);
     const data = await res.json();
 
     const div = document.getElementById("now-playing");
@@ -26,7 +27,7 @@ async function fetchNowPlaying() {
 }
 
 async function fetchProfile() {
-    const res = await fetch("https://alinasworldwidewebapis-production.up.railway.app/spotify-stats/profile");
+    const res = await fetch(`${API_BASE_URL}profile`);;
     const data = await res.json();
 
     const div = document.getElementById("spotify-profile");
@@ -43,7 +44,7 @@ async function fetchProfile() {
 }
 
 async function fetchTopTracks(timeRange = "medium_term", limit = 10) {
-    const res = await fetch(`https://alinasworldwidewebapis-production.up.railway.app/spotify-stats/top-tracks?time_range=${timeRange}&limit=${limit}`);
+    const res = await fetch(`${API_BASE_URL}top-tracks?time_range=${timeRange}&limit=${limit}`);
     const tracks = await res.json();
 
     const div = document.getElementById("top-tracks");
@@ -80,15 +81,16 @@ document.getElementById("time-range-select").addEventListener("change", e => {
     fetchTopTracks(e.target.value);
 });
 
-async function fetchTopRecent(limit = 3, days = 3) {
-    const res = await fetch(`https://alinasworldwidewebapis-production.up.railway.app/spotify-stats/recent-summary?limit=${limit}&days=${days}`);
+async function fetchTopRecent() {
+    const res = await fetch(`${API_BASE_URL}recent-summary`); 
     const data = await res.json();
 
     const tracks = data.top_tracks; 
     const totalMinutes = data.minutes_played; 
+    const uniqueArtists = data.unique_artists;
     const div = document.getElementById("recent-tracks");
 
-    if (tracks.length === 0) {
+    if (!tracks || tracks.length === 0) {
         div.innerHTML = '<p>No repeated tracks in the recent period 🎵</p>';
         return;
     }
@@ -101,9 +103,10 @@ async function fetchTopRecent(limit = 3, days = 3) {
 
         setTimeout(() => {
             div.innerHTML = `
-            <p style="color: hotpink; font-weight: 600; font-size: 1.1rem;">${track.plays} recent listens</p>
-            ${track.album_art ? `<img src="${track.album_art}" alt="${track.name} album cover" width="200">` : ""}
-            <p><strong>${track.name}</strong> by ${track.artist}</p>
+            <p style="color: hotpink; font-weight: 600; font-size: 1.1rem;">${track.listen_count} recent listens</p>
+            ${track.album_art ? `<img src="${track.album_art}" alt="${track.track_name} album cover" width="200">` : ""}
+            <p><strong>${track.track_name}</strong> by ${track.artist_name}</p>
+            <p><em>${track.album_name}</em></p>
             `;
             div.style.opacity = 1;
         }, 200);
@@ -112,7 +115,7 @@ async function fetchTopRecent(limit = 3, days = 3) {
     showTrack(currentIndex);
 
     if (tracks.length > 0) {
-      document.getElementById("recent-tracks-buttons").style.display = "block";
+        document.getElementById("recent-tracks-buttons").style.display = "block";
     }
     
     document.getElementById("prev").addEventListener("click", () => {
@@ -125,14 +128,15 @@ async function fetchTopRecent(limit = 3, days = 3) {
         showTrack(currentIndex);
     });
 
-  document.getElementById("summary").innerHTML = 
-   `<h3><strong>${totalMinutes}</strong> minutes played in the last ${data.days} days 🎶</h3>`;
-
+    document.getElementById("summary").innerHTML = 
+        `<h3 style="color: hotpink;"><strong>This week</strong></h3>
+        <h3><strong>${totalMinutes}</strong> minutes played 🎶</h3>
+        <h3><strong>${uniqueArtists}</strong> artists listened to >*-*<</h3>`;
 }
 
 async function fetchTopArtists(timeRange = "medium_term", limit = 10) {
-    const res = await fetch(`https://alinasworldwidewebapis-production.up.railway.app/spotify-stats/top-artists?time_range=${timeRange}&limit=${limit}`);
-    const artists = await res.json();
+    const res = await fetch(`${API_BASE_URL}top-artists?time_range=${timeRange}&limit=${limit}`);
+    const artists = await res.json(); 
 
     const div = document.getElementById("top-artists");
     div.innerHTML = artists.map((artist, index) => `
