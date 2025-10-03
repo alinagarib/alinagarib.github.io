@@ -89,8 +89,10 @@ This page is connected to an API endpoint I built and deployed, which connects t
     </div>
   </fieldset>
 </div>
-
-
 </div>
 
+<script>
+  const API_BASE_URL = "{{ site.api_base_url }}";
+  console.log("API_BASE_URL:", API_BASE_URL);
+</script>
 <script src="{{ '/assets/js/spotify.js' | relative_url }}"></script>

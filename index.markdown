@@ -3,10 +3,6 @@ layout: default
 title: Welcome to Alina's World Wide Web
 ---
 
-<div>
-  <p style="color: red">
-  My apologies, but the free trial of the software I was using to host my APIs has ended. I am working on moving to hosting with AWS as soon as I can!!!!</p>
-</div>
 <div class="about-me-container">
   <fieldset>
     <legend>About Me</legend>

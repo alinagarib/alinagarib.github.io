@@ -358,7 +358,7 @@ h3 {
 
 /* Artist list styling (mirrors track list) */
 #top-artists {
-  max-height: 175px; 
+  max-height: 200px; 
   overflow-y: auto;
   width: 100%; 
   border: 2px solid rgb(50, 45, 139); 
