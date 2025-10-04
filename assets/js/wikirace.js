@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.getElementById("reset-button");
   const pathButton = document.getElementById("path-button");
   const resultDiv = document.getElementById("result");
-  const apiBaseUrl = "https://alinasworldwidewebapis-production.up.railway.app/wiki-race";
   let savedPath = [];
 
   lengthButton.addEventListener("click", async () => {
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultDiv.textContent = "Finding path... Please be patient... (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧";
 
     try {
-      const response = await fetch(`${apiBaseUrl}/find-path`, {
+      const response = await fetch(`${WIKI_API_BASE_URL}find-path`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ start: startLink, end: endLink }),

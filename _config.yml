@@ -29,6 +29,7 @@ url: "http://localhost:4000" # "https://www.alinasworldwideweb.com/" # the base 
 twitter_username: jekyllrb
 github_username:  jekyll
 api_base_url: "https://rmylcjxy3unkzzdk7iidve2pny0ssane.lambda-url.us-east-1.on.aws/"
+wiki_api_base_url: "https://xfiix2mlvyk5dwnfyijw45fghy0dodyo.lambda-url.us-east-1.on.aws/"
 
 # Build settings
 theme: minima
