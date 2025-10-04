@@ -47,7 +47,3 @@ WARNING: Please be aware that this BFS scales very quickly. If your links are hi
   const WIKI_API_BASE_URL = "{{ site.wiki_api_base_url }}";
 </script>
 
-
-You can find the source code for the API at GitHub:
-[WikiRaceAPI](https://github.com/alinagarib/WikiRaceAPI)
-
