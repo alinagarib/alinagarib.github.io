@@ -131,7 +131,7 @@ async function fetchTopRecent() {
     document.getElementById("summary").innerHTML = 
         `<h3 style="color: hotpink;"><strong>This week</strong></h3>
         <h3><strong>${totalMinutes}</strong> minutes played 🎶</h3>
-        <h3><strong>${uniqueArtists}</strong> artists listened to >*-*<</h3>`;
+        <h3><strong>${uniqueArtists}</strong> artists listened to ❀◕ ‿ ◕❀</h3>`;
 }
 
 async function fetchTopArtists(timeRange = "medium_term", limit = 10) {
