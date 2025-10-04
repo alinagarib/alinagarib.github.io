@@ -3,19 +3,15 @@ layout: default
 title: WikiRace
 permalink: /wikirace/
 ---
-<div>
-  <p style="color: red">
-  My apologies, but the free trial of the software I was using to host my APIs has ended. I am working on moving to hosting with AWS as soon as I can!!!!</p>
-</div>
 
-This a WikiRace solver connected to a FastAPI endpoint I built and deployed.
+This a WikiRace solver connected to a FastAPI endpoint I built and deployed via AWS Lambda.
 To use it, enter start and end wikipedia links, as they appear in the url.
 
 EX: https://en.wikipedia.org/wiki/Death_from_laughter
 
 Click the 'Find Shortest Path Length' button to show the minimum amount of clicks to get from link A to B. If you want to see an optimal path (as there may be many with the same length), a button will appear to reveal the solution! Otherwise, you can reset and try another set of links.
 
-WARNING: Please be aware that this scales very quickly. If your links are highly unrelated, this may take 20+ minutes and result in a network error due to RAM memory limitations on the free tier that I am hosting my API on. 
+WARNING: Please be aware that this BFS scales very quickly. If your links are highly unrelated, AWS Lambda times out after 15 minutes, and this will not return a result. 
 
 <script src="/assets/js/wikirace.js"></script>
 <form id="wikirace-form" onsubmit="return false;">
@@ -46,6 +42,10 @@ WARNING: Please be aware that this scales very quickly. If your links are highly
   display: none;
 }
 </style>
+
+<script>
+  const WIKI_API_BASE_URL = "{{ site.wiki_api_base_url }}";
+</script>
 
 
 You can find the source code for the API at GitHub:
