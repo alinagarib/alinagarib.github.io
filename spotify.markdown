@@ -4,7 +4,7 @@ title: My Spotify Stats
 permalink: /spotify/
 ---
 
-This page is connected to an API endpoint I built and deployed, which connects to my personal Spotify account. It keeps track of my current listening and statistics!
+This page is connected to an API endpoint I built and deployed via AWS Lambda, which connects to my personal Spotify account. It keeps track of my current listening and statistics!
 
 <div id="spotify-profile" class="spotify-profile">
   <p>Loading profile...</p>
