@@ -10,42 +10,45 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
   <p>Loading profile...</p>
 </div>
 <div class="spotify-container">
+
+<div class="now-and-artists">
+  <div class="left-column">
     <fieldset>
-    <legend>On Repeat</legend>
-    <div id="recent-tracks-container" style="text-align:center;">
-      <div id="recent-tracks" style="display:inline-block; width:220px;"></div>
-      <div id="recent-tracks-buttons" style="margin-top:10px; display:none;">
-        <button id="prev" style="margin-right:5px;">&#8249; Prev</button>
-        <button id="next">Next &#8250;</button>
+      <legend>On Repeat</legend>
+      <div id="recent-tracks-container" style="text-align:center;">
+        <div id="recent-tracks"></div>
+        <div id="recent-tracks-buttons" style="margin-top:10px; display:none;">
+          <button id="prev" style="margin-right:5px;">&#8249; Prev</button>
+          <button id="next">Next &#8250;</button>
+        </div>
       </div>
-    </div>
       <div id="summary" style="margin-top:10px; font-size:1.1rem;">
         <p>Loading summary...</p>
       </div>
     </fieldset>
-
-<div class="now-and-artists">
-  <div id="now-playing">
-    <p>Loading...</p>
   </div>
 
-  <div class="artists-container">
-  <fieldset>
-    <legend>Recently Played</legend>
-    <div class="select-container">
-      <div>
-        <label for="recent-listening-select">Number of tracks:</label>
-        <select id="recent-listening-select">
-          <option value="10">10</option>
-          <option value="20" selected>20</option>
-          <option value="50">50</option>
-        </select>
+  <div class="right-column">
+    <div id="now-playing">
+      <p>Loading...</p>
+    </div>
+    
+    <fieldset>
+      <legend>Recently Played</legend>
+      <div class="select-container">
+        <div>
+          <label for="recent-listening-select">Number of tracks:</label>
+          <select id="recent-listening-select">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="50">50</option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div id="recent-listening">
-      <p>Loading recently listened tracks...</p>
-    </div>
-  </fieldset>
+      <div id="recent-listening">
+        <p>Loading recently listened tracks...</p>
+      </div>
+    </fieldset>
   </div>
 </div>
     
