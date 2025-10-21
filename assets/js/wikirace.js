@@ -35,9 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (!response.ok) {
-        const err = await response.json();
-        throw new Error(err.detail || "API Error");
+        let errorMessage;
+        if (response.status === 502 || response.status === 504) {
+          errorMessage = "Request timed out on the server, sorry! Please try more related links.";
+        } else {
+          try {
+            const errorData = await response.json();
+            errorMessage = errorData.detail || errorData.message || `API Error (Status ${response.status})`;
+          } catch {
+            const textBody = await response.text();
+            errorMessage = textBody.trim() || "An unknown server error occurred. The request may have timed out :(";
+          }
+        }
+        throw new Error(errorMessage);
       }
+
 
       const data = await response.json();
       const startTitle = extractTitle(startLink);
@@ -48,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lengthButton.classList.add("hidden");
       resetButton.classList.remove("hidden");
       pathButton.classList.remove("hidden");
+
     } catch (error) {
       resultDiv.textContent = `Error: ${error.message}`;
     }

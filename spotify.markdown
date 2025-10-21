@@ -30,35 +30,24 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
   </div>
 
   <div class="artists-container">
-    <fieldset>
-      <legend>My Top Artists</legend>
-      <div class="select-container">
-        <div>
-          <label for="artist-time-range-select">Time range:</label>
-          <select id="artist-time-range-select">
-            <option value="short_term">Last 4 weeks</option>
-            <option value="medium_term" selected>Last 6 months</option>
-            <option value="long_term">All time</option>
-          </select>
-        </div>
-        <div>
-          <label for="artist-limit">Number of artists:</label>
-          <select id="artist-limit">
-            <option value="5">5</option>
-            <option value="10" selected>10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-          </select>
-        </div>
+  <fieldset>
+    <legend>Recently Played</legend>
+    <div class="select-container">
+      <div>
+        <label for="recent-listening-select">Number of tracks:</label>
+        <select id="recent-listening-select">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="50">50</option>
+        </select>
       </div>
-      <div id="top-artists">
-        <p>Loading top artists...</p>
-      </div>
-    </fieldset>
+    </div>
+    <div id="recent-listening">
+      <p>Loading recently listened tracks...</p>
+    </div>
+  </fieldset>
   </div>
 </div>
-
-
     
 <div class="tracks-container">
   <fieldset>
@@ -88,10 +77,38 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
       <p>Loading top tracks...</p>
     </div>
   </fieldset>
+
+  <fieldset>
+      <legend>My Top Artists</legend>
+      <div class="select-container">
+        <div>
+          <label for="artist-time-range-select">Time range:</label>
+          <select id="artist-time-range-select">
+            <option value="short_term">Last 4 weeks</option>
+            <option value="medium_term" selected>Last 6 months</option>
+            <option value="long_term">All time</option>
+          </select>
+        </div>
+        <div>
+          <label for="artist-limit">Number of artists:</label>
+          <select id="artist-limit">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+      </div>
+      <div id="top-artists">
+        <p>Loading top artists...</p>
+      </div>
+    </fieldset>
 </div>
 </div>
 
+
 <script>
   const API_BASE_URL = "{{ site.api_base_url }}";
+  console.log("API_BASE_URL:", API_BASE_URL);
 </script>
 <script src="{{ '/assets/js/spotify.js' | relative_url }}"></script>

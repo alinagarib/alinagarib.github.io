@@ -165,6 +165,36 @@ artistLimitSelect.addEventListener("change", updateArtists);
 
 updateArtists();
 
+async function fetchRecentListening(limit = 20) {
+  const res = await fetch(`${API_BASE_URL}recent-listening?limit=${limit}`);
+  const recents = await res.json(); 
+
+  const div = document.getElementById("recent-listening");
+  div.innerHTML = recents.map((recents) => `
+    <div class="track">
+        ${recents.album_art ? `<img src="${recents.album_art}" alt="${recents.track_name} album cover">` : ""}
+        <div class="track-details">
+          <p class="track-name">${recents.track_name}</p>
+          <p class="track-artist">${recents.artist_name}</p>
+        </div>
+        <div class="track-album">
+          <p>${recents.album}</p>
+        </div>
+      </div>
+    `).join("");
+}
+
+const recentListeningSelect = document.getElementById("recent-listening-select");
+
+function updateRecents() {
+  const limit = recentListeningSelect.value;
+  fetchRecentListening(limit);
+}
+
+recentListeningSelect.addEventListener("change", updateRecents);
+
+updateRecents();
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchProfile();
     fetchNowPlaying();
@@ -172,4 +202,5 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchTopTracks();
     fetchTopRecent(3, 3);
     fetchTopArtists();
+    fetchRecentListening();
 });
