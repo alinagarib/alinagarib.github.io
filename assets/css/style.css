@@ -211,6 +211,7 @@ legend {
   align-items: stretch; 
   gap: 5px;
   width: 100%;
+  flex-wrap: nowrap;
 }
 
 #spotify-profile {
@@ -234,6 +235,13 @@ legend {
 
 #now-playing {
   text-align: center; 
+  max-width: fit-content;
+}
+
+.artists-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 #spotify-profile a {
@@ -243,7 +251,7 @@ legend {
   text-align: center;
 }
 
-.tracks-container {
+.tracks-container{
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -472,9 +480,10 @@ h3 {
 .now-and-artists {
   display: flex;
   flex-direction: column;
-  align-items: stretch; 
+  align-items: center; 
   width: 100%;
-  max-width: none;
+  flex: 1;
+  min-width: 0;
   gap: 0;
 }
 
@@ -552,11 +561,6 @@ h3 {
 
   .spotify-container {
     align-items: flex-start;
-  }
-
-  .now-and-artists {
-    width: auto;
-    flex-shrink: 0;
   }
 }
 
