@@ -9,11 +9,23 @@ async function fetchNowPlaying() {
         return;
     }
 
+    if (data.type == "episode") {
+      art = data.image;
+      song = data.name;
+      artist = data.publisher;
+      album = data.show_name;
+    } else {
+      art = data.album_art;
+      song = data.song;
+      artist = data.artist;
+      album = data.album;
+    }
+
     const progressPercent = (data.progress_ms / data.duration_ms) * 100;
 
     div.innerHTML = `
     <h2>Now Playing</h2>
-    <img src="${data.album_art}" width="200">
+    <img src="${art}" width="200">
     <div class="progress-container">
         <div class="progress-bar" style="width:${progressPercent}%;"></div>
     </div>
@@ -21,8 +33,8 @@ async function fetchNowPlaying() {
             <div class="progress-time">0:00</div>
             <div class="progress-time">${Math.floor(data.duration_ms / 60000)}:${String(Math.floor((data.duration_ms % 60000) / 1000)).padStart(2, '0')}</div>
         </div>
-    <p><strong>${data.song}</strong> by ${data.artist}</p>
-    <p><em>${data.album}</em></p>
+    <p><strong>${song}</strong> by ${artist}</p>
+    <p><em>${album}</em></p>
   `;
 }
 
@@ -195,6 +207,153 @@ recentListeningSelect.addEventListener("change", updateRecents);
 
 updateRecents();
 
+
+async function searchTracks(query, limit = 5) {
+  const encodedQuery = encodeURIComponent(query);
+  
+  const url = `${API_BASE_URL}search?query=${encodedQuery}&limit=${limit}`;
+  
+  try {
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`Search failed: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data; 
+  } catch (error) {
+    console.error('Error searching tracks:', error);
+    return { query, count: 0, tracks: [] };
+  }
+}
+
+async function handleSearch() {
+  const searchInput = document.getElementById('search-input');
+  const query = searchInput.value.trim();
+  
+  if (!query) {
+    alert('Please enter a search query');
+    return;
+  }
+  
+  const results = await searchTracks(query, 10); 
+  
+  displaySearchResults(results.tracks);
+}
+
+function displaySearchResults(tracks) {
+  const resultsDiv = document.getElementById('search-results');
+  
+  if (tracks.length === 0) {
+    resultsDiv.innerHTML = '<p>No tracks found</p>';
+    return;
+  }
+  
+  resultsDiv.innerHTML = ''; 
+  resultsDiv.style.display = 'block';
+
+  resultsDiv.innerHTML = tracks.map(track => `
+    <div class="search-result-item">
+      ${track.album_art ? `<img src="${track.album_art}" alt="${track.name}" width="50">` : ''}
+      <div class="track-info">
+        <strong>${track.name}</strong>
+        <p>${track.artist} - ${track.album}</p>
+      </div>
+      <button onclick="addToPlaylist('${track.uri}')">+</button>
+    </div>
+  `).join('');
+}
+
+async function addToPlaylist(trackUri) {
+  const url = `${API_BASE_URL}add-to-playlist`;
+  
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ track_uri: trackUri })
+    });
+    
+    const result = await response.json();
+    const resultsDiv = document.getElementById('search-results');
+    
+    if (result.success) {
+      resultsDiv.innerHTML = '<p>Song added to playlist successfully!</p>';
+    } else {
+      resultsDiv.innerHTML = '<p>Song not added to playlist, an error occured :(</p>';
+    }
+  } catch (error) {
+    console.error('Error adding to playlist:', error);
+    alert('Failed to add track to playlist');
+  }
+}
+
+function viewInstructions() {
+  const modal = document.getElementById("instructions-modal");
+  const modalContent = modal.querySelector(".modal-content"); 
+
+  modalContent.innerHTML = `
+    <span class="close-button" onclick="closeInstructions()">&times;</span>
+    <h3>🎶 Add a Song to Our Playlist 🎧</h3>
+    <p>1. Use the search below to find a song</p>
+    <p>2. Select the song you want to add</p>
+    <p>3. Click add to playlist!</p>
+    <p>Have fun sharing your music! ✨</p>
+    <div class="search-controls">
+                <input type="text" id="search-input" class="search-input" placeholder="Search for a song...">
+                <button id="search-button" onclick="handleSearch()">Search</button>
+            </div>
+    <div id="search-results">
+  `;
+
+  modal.style.display = "block";
+
+const searchInput = document.getElementById('search-input');
+  
+  if (searchInput) {
+      searchInput.addEventListener('keypress', function(event) {
+          if (event.key === 'Enter') { 
+              event.preventDefault(); 
+              handleSearch();
+          }
+      });
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+}
+
+function closeInstructions() {
+    const modal = document.getElementById("instructions-modal");
+    modal.style.display = "none";
+}
+
+async function getMyPlaylist() {
+    const res = await fetch(`${API_BASE_URL}get-playlist`);
+    const playlist = await res.json(); 
+
+    const div = document.getElementById("my-playlist");
+    div.innerHTML = `
+    <div class="playlist-item">
+        ${playlist.image 
+          ? `<a href="${playlist.url}" target="_blank">
+              <img src="${playlist.image}" alt="${playlist.name}" width="100">
+            </a>` 
+          : ''}      <div class="playlist-info">
+        <strong>${playlist.name}</strong>
+        <p>${playlist.description} </p>
+      </div>
+    </div>
+    `;
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchProfile();
     fetchNowPlaying();
@@ -203,4 +362,5 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchTopRecent(3, 3);
     fetchTopArtists();
     fetchRecentListening();
+    getMyPlaylist();
 });

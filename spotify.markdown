@@ -14,6 +14,18 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
 <div class="now-and-artists">
   <div class="left-column">
     <fieldset>
+      <legend>Reccomend a Song</legend>
+      <div class="search-container">
+      <div id="my-playlist"><p>Loading playlist...</p></div>  
+      <button class="add-to-playlist" onclick="viewInstructions()">Add To Playlist</button>
+      <div id="instructions-modal" class="modal">
+          <div class="modal-content">
+              </div>
+      </div>
+      </div>
+    </fieldset> 
+
+    <fieldset>
       <legend>On Repeat</legend>
       <div id="recent-tracks-container" style="text-align:center;">
         <div id="recent-tracks"></div>
