@@ -751,6 +751,12 @@ h3 {
     width: 100%;
     max-width: 300px;
   }
+  .search-result-item button {
+    width: auto !important; 
+    flex-shrink: 0;
+    border-radius: 30px;
+    padding: 5px 10px;
+  }
 }
 
 /* Small mobile phones */
