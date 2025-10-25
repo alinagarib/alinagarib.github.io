@@ -543,10 +543,7 @@ h3 {
 }
 
 .search-container {
-  display: flex;
-  align-items: flex-end; 
-  gap: 15px; 
-  justify-content: flex-start; 
+  display: block;
   margin: 0;
 }
 
@@ -554,6 +551,8 @@ h3 {
   width: 100%;
   padding: 6px 10px;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #search-input {
@@ -622,6 +621,11 @@ h3 {
   gap: 10px;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+#recent-tracks-buttons{
+  display: flex;
+  justify-content: center;
 }
 
 #gif-container img {
@@ -737,20 +741,11 @@ h3 {
     flex-direction: column;
   }
 
-  .search-container {
-    flex-direction: column;
-    align-items: center; 
-    gap: 10px;
-  }
-
-  .playlist-item {
-    gap: 20px;
-  }
-  
   .add-to-playlist {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
   }
+
   .search-result-item button {
     width: auto !important; 
     flex-shrink: 0;
@@ -842,7 +837,6 @@ h3 {
 
 
 #my-playlist {
-    flex-grow: 1; 
     min-width: 0;
 }
 

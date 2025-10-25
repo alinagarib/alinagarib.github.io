@@ -127,7 +127,7 @@ async function fetchTopRecent() {
     showTrack(currentIndex);
 
     if (tracks.length > 0) {
-        document.getElementById("recent-tracks-buttons").style.display = "block";
+        document.getElementById("recent-tracks-buttons").style.display = "flex";
     }
     
     document.getElementById("prev").addEventListener("click", () => {
@@ -347,7 +347,7 @@ async function getMyPlaylist() {
             </a>` 
           : ''}      <div class="playlist-info">
         <strong>${playlist.name}</strong>
-        <p>${playlist.description} </p>
+        <i>${playlist.description} </i>
       </div>
     </div>
     `;
