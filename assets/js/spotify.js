@@ -298,9 +298,9 @@ function viewInstructions() {
   modalContent.innerHTML = `
     <span class="close-button" onclick="closeInstructions()">&times;</span>
     <h3>🎶 Add a Song to Our Playlist 🎧</h3>
-    <p>1. Use the search below to find a song</p>
-    <p>2. Select the song you want to add</p>
-    <p>3. Click add to playlist!</p>
+    <p>1. Use the search bar below to find a song</p>
+    <p>2. Find the song you want to add</p>
+    <p>3. Click the + button to add to the playlist!</p>
     <p>Have fun sharing your music! ✨</p>
     <div class="search-controls">
                 <input type="text" id="search-input" class="search-input" placeholder="Search for a song...">
