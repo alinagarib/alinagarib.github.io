@@ -16,6 +16,6 @@ title: Alina's World Wide Web
   </fieldset>
   <fieldset>
     <legend>My Resume</legend>
-    <iframe src="/assets/documents/Alina_Garib_Resume.pdf#toolbar=0" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+    <iframe src="/assets/documents/Alina_Garib_Resume1.pdf#toolbar=0" style="width: 100%; height: 100%;" frameborder="0"></iframe>
   </fieldset>
 </div>
