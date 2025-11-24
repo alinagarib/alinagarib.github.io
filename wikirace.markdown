@@ -16,7 +16,7 @@ WARNING: Please be aware that this BFS scales very quickly. If your links are hi
 <script src="/assets/js/wikirace.js"></script>
 <form id="wikirace-form" onsubmit="return false;">
   <fieldset>
-    <legend>WikiRace Pathfinder</legend>
+    <legend>WikiRace Pathfinder 🪼⋆.ೃ࿔*:･ </legend>
 
     <div>
         <label for="start-link">Start Wikipedia URL:</label>

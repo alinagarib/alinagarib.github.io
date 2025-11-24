@@ -237,6 +237,8 @@ legend {
 #now-playing {
   text-align: center; 
   width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .artists-container {
@@ -292,12 +294,12 @@ legend {
 }
 
 #recent-listening {
-  max-height: 300px;
+  max-height: 350px;
 }
 
 #top-tracks,
 #top-artists {
-  max-height: 275px;
+  max-height: 350px;
 }
 
 .track {
@@ -635,6 +637,53 @@ h3 {
   justify-content: center;
   display: flex;
   flex-direction: column;
+}
+
+.summary-container {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.stat-item {
+    padding: 0.5rem;
+    background: rgba(255, 105, 180, 0.1);
+    border-radius: 10px;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: hotpink;
+}
+
+.stat-label {
+    margin-top: 0.15rem;
+    font-size: 0.85rem;
+}
+
+.top-artist-card {
+    margin-top: 0.1rem;
+    padding: 0.5rem;
+    background: rgba(255, 105, 180, 0.05);
+    border-radius: 15px;
+}
+
+.artist-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.artist-minutes {
+    color: #666;
+    font-size: 0.9rem;
 }
 
 /* Tablet and larger screens */

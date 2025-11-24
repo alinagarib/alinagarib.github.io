@@ -24,7 +24,8 @@ async function fetchNowPlaying() {
     const progressPercent = (data.progress_ms / data.duration_ms) * 100;
 
     div.innerHTML = `
-    <h2>Now Playing</h2>
+    <h2 style="margin-bottom: 0px">Now Playing</h2>
+    <h2 style="margin-top: 0px; margin-bottom: 10px">⋆.˚✮🎧✮˚.⋆</h2>
     <img src="${art}" width="200">
     <div class="progress-container">
         <div class="progress-bar" style="width:${progressPercent}%;"></div>
@@ -100,6 +101,7 @@ async function fetchTopRecent() {
     const tracks = data.top_tracks; 
     const totalMinutes = data.minutes_played; 
     const uniqueArtists = data.unique_artists;
+    const topArtist = data.artist;
     const div = document.getElementById("recent-tracks");
 
     if (!tracks || tracks.length === 0) {
@@ -140,10 +142,27 @@ async function fetchTopRecent() {
         showTrack(currentIndex);
     });
 
-    document.getElementById("summary").innerHTML = 
-        `<h3 style="color: hotpink;"><strong>This week</strong></h3>
-        <h3><strong>${totalMinutes}</strong> minutes played 🎶</h3>
-        <h3><strong>${uniqueArtists}</strong> artists listened to ❀‿❀</h3>`;
+document.getElementById("summary").innerHTML = 
+    `<div class="summary-container">        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">${totalMinutes}</div>
+                <div class="stat-label">minutes played</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-value">${uniqueArtists}</div>
+                <div class="stat-label">artists listened to</div>
+            </div>
+        </div>
+        
+        <div class="top-artist-card">
+            <h3 style="color: hotpink; margin-bottom: 0.25rem; padding: 0;"> ٠࣪⭑❀ Top Artist ❀˖°</h3>
+            ${topArtist.album_art ? `<img src="${topArtist.album_art}" alt="${topArtist.artist_name} image" style="border-radius: 50%; width: 75px; height: 75px; object-fit: cover; margin-bottom: 0.5rem;">` : ""}
+            <div class="artist-name">${topArtist.artist_name}</div>
+            <div class="artist-minutes">${topArtist.minutes_listened} minutes</div> 
+        </div>
+    </div>`;
 }
 
 async function fetchTopArtists(timeRange = "medium_term", limit = 10) {

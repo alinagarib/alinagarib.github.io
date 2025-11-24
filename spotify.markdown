@@ -13,20 +13,20 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
 
 <div class="now-and-artists">
   <div class="left-column">
-    <fieldset>
-      <legend>Reccomend a Song</legend>
-      <div class="search-container">
-      <div id="my-playlist"><p>Loading playlist...</p></div>  
-      <button class="add-to-playlist" onclick="viewInstructions()">Add To Playlist</button>
-      <div id="instructions-modal" class="modal">
-          <div class="modal-content">
-              </div>
-      </div>
-      </div>
-    </fieldset> 
+      <fieldset>
+        <legend>Reccomend a Song 💗ྀི</legend>
+          <div class="search-container">
+            <div id="my-playlist"><p>Loading playlist...</p></div>  
+          <button class="add-to-playlist" onclick="viewInstructions()">Add To Playlist</button>
+            <div id="instructions-modal" class="modal">
+              <div class="modal-content">
+            </div>
+          </div>
+        </div>
+    </fieldset>
 
     <fieldset>
-      <legend>On Repeat</legend>
+      <legend>This Week 𝄞⨾💿✮˚.⋆ </legend>
       <div id="recent-tracks-container" style="text-align:center;">
         <div id="recent-tracks"></div>
         <div id="recent-tracks-buttons" style="margin-top:10px; display:none;">
@@ -40,13 +40,13 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
     </fieldset>
   </div>
 
-  <div class="right-column">
+  <div class="right-column"> 
     <div id="now-playing">
       <p>Loading...</p>
     </div>
     
     <fieldset>
-      <legend>Recently Played</legend>
+      <legend>Recently Played ⋆˚꩜｡</legend>
       <div class="select-container">
         <div>
           <label for="recent-listening-select">Number of tracks:</label>
@@ -61,12 +61,13 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
         <p>Loading recently listened tracks...</p>
       </div>
     </fieldset>
+
   </div>
 </div>
     
 <div class="tracks-container">
   <fieldset>
-    <legend>My Top Tracks</legend>
+    <legend>My Top Tracks ‧₊˚♪ 𝄞₊˚⊹ </legend>
     <div class="select-container">
       <div>
         <label for="time-range-select">Time range:</label>
@@ -94,7 +95,7 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
   </fieldset>
 
   <fieldset>
-      <legend>My Top Artists</legend>
+      <legend>My Top Artists ִֶָ. ..𓂃 ִֶָ🦋་༘࿐</legend>
       <div class="select-container">
         <div>
           <label for="artist-time-range-select">Time range:</label>

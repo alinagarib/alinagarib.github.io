@@ -5,7 +5,7 @@ title: Alina's World Wide Web
 
 <div class="about-me-container">
   <fieldset>
-    <legend>About Me</legend>
+    <legend> ⋆｡‧˚ʚ About Me ɞ˚‧｡⋆</legend>
     <div class="about-me-content">
       <img src="/assets/images/headshots/DSC03029.JPEG" alt="headshot" class="headshot">
       <p>Hi! My name is Alina Garib. I am a fourth year at the University of Florida, and I am pursuing a Bachelor's of Science in Computer Science, as well as a minor in Chinese Language and Literature. I am passionate about exploring technology, and I am constantly looking for new ways to strengthen my technical acumen. I am seeking opportunity to get involved with innovative, creative, and collaborative teams. </p>
@@ -15,7 +15,12 @@ title: Alina's World Wide Web
     </div>
   </fieldset>
   <fieldset>
-    <legend>My Resume</legend>
-    <iframe src="/assets/documents/Alina_Garib_Resume1.pdf#toolbar=0" style="width: 100%; height: 100%;" frameborder="0"></iframe>
-  </fieldset>
+  <legend>
+    My Resume 
+    <a href="/assets/documents/Alina_Garib_Resume.pdf" download="Alina_Garib_Resume.pdf" style="text-decoration: none; margin-left: 10px;">
+      <span style="cursor: pointer; font-size: 0.9em;">⋆.ೃ࿔🌸*:･↓ </span>
+    </a>
+  </legend>
+  <iframe src="/assets/documents/Alina_Garib_Resume.pdf#toolbar=0" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+</fieldset>
 </div>
