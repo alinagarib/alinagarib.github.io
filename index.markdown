@@ -17,7 +17,7 @@ title: Alina's World Wide Web
   <fieldset>
   <legend>
     My Resume 
-    <a href="/assets/documents/Alina_Garib_Resume.pdf" download="Alina_Garib_Resume.pdf" style="text-decoration: none; margin-left: 10px;">
+    <a href="/assets/documents/Alina_Garib_Resume.pdf" download="Alina_Garib_Resume.pdf" style="text-decoration: none;">
       <span style="cursor: pointer; font-size: 0.9em;">⋆.ೃ࿔🌸*:･↓ </span>
     </a>
   </legend>

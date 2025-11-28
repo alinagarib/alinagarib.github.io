@@ -14,7 +14,7 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
 <div class="now-and-artists">
   <div class="left-column">
       <fieldset>
-        <legend>Reccomend a Song 💗ྀི</legend>
+        <legend>Reccomend a Song ↻◁ || ▷↺</legend>
           <div class="search-container">
             <div id="my-playlist"><p>Loading playlist...</p></div>  
           <button class="add-to-playlist" onclick="viewInstructions()">Add To Playlist</button>
@@ -95,7 +95,7 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
   </fieldset>
 
   <fieldset>
-      <legend>My Top Artists ִֶָ. ..𓂃 ִֶָ🦋་༘࿐</legend>
+      <legend>My Top Artists ⋆˚࿔♫⋆˚࿔📀♡⋆.˚</legend>
       <div class="select-container">
         <div>
           <label for="artist-time-range-select">Time range:</label>

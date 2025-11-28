@@ -5,7 +5,7 @@ async function fetchNowPlaying() {
 
     const div = document.getElementById("now-playing");
     if (!data.is_playing) {
-        div.innerHTML = '<h2>Now Playing</h2><img src="/assets/images/no-music.gif" width="200"><p>Not listening to anything right now 🎧</p>';
+        div.innerHTML = '<h2 style="margin-bottom: 0px">Now Playing</h2><h2 style="margin-top: 0px; margin-bottom: 10px">⋆.˚✮🎧✮˚.⋆</h2><img src="/assets/images/no-music.gif" width="200"><p>Not listening to anything right now 🎧</p>';
         return;
     }
 
@@ -105,7 +105,7 @@ async function fetchTopRecent() {
     const div = document.getElementById("recent-tracks");
 
     if (!tracks || tracks.length === 0) {
-        div.innerHTML = '<p>No repeated tracks in the recent period 🎵</p>';
+        div.innerHTML = '<p>No repeated tracks this week 🎵</p>';
         return;
     }
 
