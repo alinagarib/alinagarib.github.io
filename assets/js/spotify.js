@@ -381,5 +381,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchTopRecent(3, 3);
     fetchTopArtists();
     fetchRecentListening();
+    setInterval(fetchRecentListening, 300000);
     getMyPlaylist();
 });
