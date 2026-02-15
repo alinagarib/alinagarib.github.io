@@ -353,6 +353,17 @@ legend {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 100px;
+  margin-left: 10px;
+}
+
+.track-album p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 select {
