@@ -101,7 +101,7 @@ async function fetchTopRecent() {
     const tracks = data.top_tracks; 
     const totalMinutes = data.minutes_played; 
     const uniqueArtists = data.unique_artists;
-    const topArtist = data.artist;
+    let topArtist = data.artist; // could be a single object or an array
     const div = document.getElementById("recent-tracks");
 
     if (!tracks || tracks.length === 0) {
@@ -117,33 +117,77 @@ async function fetchTopRecent() {
 
         setTimeout(() => {
             div.innerHTML = `
-            <p style="color: hotpink; font-weight: 600; font-size: 1.1rem;">${track.listen_count} recent listens</p>
-            ${track.album_art ? `<img src="${track.album_art}" alt="${track.track_name} album cover" width="200">` : ""}
-            <p><strong>${track.track_name}</strong> by ${track.artist_name}</p>
+            <p style="color: hotpink; font-weight: 600; font-size: 1.2rem;">${track.listen_count} recent listens</p>
+            <div class="track-nav-wrapper">
+                <button class="circle-nav" id="recent-prev">&#8249;</button>
+                ${track.album_art ? `<img class="recent-album-art" src="${track.album_art}" alt="${track.track_name} album cover">` : ""}
+                <button class="circle-nav" id="recent-next">&#8250;</button>
+            </div>
+            <p><strong style="color: rgb(50, 45, 139); font-weight: 600; font-size: 1.2rem;">${track.track_name}</strong></p>
+            <p style="padding: 0; margin-top: 0;"><strong>by ${track.artist_name}</strong></p>
             <p><em>${track.album_name}</em></p>
             `;
             div.style.opacity = 1;
+
+            // attach handlers after DOM injection
+            const prevBtn = div.querySelector('#recent-prev');
+            const nextBtn = div.querySelector('#recent-next');
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+                    showTrack(currentIndex);
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % tracks.length;
+                    showTrack(currentIndex);
+                });
+            }
         }, 200);
     }
 
     showTrack(currentIndex);
 
-    if (tracks.length > 0) {
-        document.getElementById("recent-tracks-buttons").style.display = "flex";
+  
+    // ensure topArtist is always an array for easy cycling
+    if (!Array.isArray(topArtist)) {
+        topArtist = [topArtist];
     }
-    
-    document.getElementById("prev").addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
-        showTrack(currentIndex);
-    });
 
-    document.getElementById("next").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % tracks.length;
-        showTrack(currentIndex);
-    });
+    const summaryDiv = document.getElementById("summary");
 
-document.getElementById("summary").innerHTML = 
-    `<div class="summary-container">        
+    function renderTopArtistCard(artist, index, total) {
+        // allow either album_art or image
+        const imgSrc = artist.album_art || artist.image || "";
+        const prevHtml = total > 1 ? `<button class="artist-prev small-button">&#8249;</button>` : '';
+        const nextHtml = total > 1 ? `<button class="artist-next small-button">&#8250;</button>` : '';
+        return `
+        <div class="top-artist-card">
+            ${prevHtml}
+            <div class="artist-content">
+                <h3 style="color: hotpink; margin-bottom: 0.25rem; padding: 0;"> ٠࣪⭑❀ Top Artists ❀˖°</h3>
+                ${imgSrc ? `<img src="${imgSrc}" alt="${artist.artist_name} image" style="border-radius: 50%; width: 75px; height: 75px; object-fit: cover; margin-bottom: 0.5rem;">` : ""}
+                <div class="artist-name">${artist.artist_name}</div>
+                <div class="artist-minutes">${artist.minutes_listened} minutes</div> 
+            </div>
+            ${nextHtml}
+        </div>
+        `;
+    }
+
+    let currentArtistIndex = 0;
+    function showArtist(index) {
+        currentArtistIndex = index;
+        const cardContainer = document.getElementById("top-artist-card-container");
+        if (cardContainer) {
+            cardContainer.innerHTML = renderTopArtistCard(topArtist[index], index, topArtist.length);
+        }
+    }
+
+    // build summary skeleton; nav buttons will live inside each card so they don't affect layout
+    summaryDiv.innerHTML = `
+    <div class="summary-container">        
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-value">${totalMinutes}</div>
@@ -156,13 +200,23 @@ document.getElementById("summary").innerHTML =
             </div>
         </div>
         
-        <div class="top-artist-card">
-            <h3 style="color: hotpink; margin-bottom: 0.25rem; padding: 0;"> ٠࣪⭑❀ Top Artist ❀˖°</h3>
-            ${topArtist.album_art ? `<img src="${topArtist.album_art}" alt="${topArtist.artist_name} image" style="border-radius: 50%; width: 75px; height: 75px; object-fit: cover; margin-bottom: 0.5rem;">` : ""}
-            <div class="artist-name">${topArtist.artist_name}</div>
-            <div class="artist-minutes">${topArtist.minutes_listened} minutes</div> 
-        </div>
+        <div id="top-artist-card-container"></div>
     </div>`;
+
+    // show first artist
+    showArtist(currentArtistIndex);
+
+    // delegate clicks on arrows from the card container
+    const cardContainer = document.getElementById("top-artist-card-container");
+    if (cardContainer) {
+        cardContainer.addEventListener("click", (e) => {
+            if (e.target.classList.contains("artist-prev")) {
+                showArtist((currentArtistIndex - 1 + topArtist.length) % topArtist.length);
+            } else if (e.target.classList.contains("artist-next")) {
+                showArtist((currentArtistIndex + 1) % topArtist.length);
+            }
+        });
+    }
 }
 
 async function fetchTopArtists(timeRange = "medium_term", limit = 10) {
@@ -378,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchNowPlaying();
     setInterval(fetchNowPlaying, 15000);
     fetchTopTracks();
-    fetchTopRecent(3, 3);
+    fetchTopRecent();
     fetchTopArtists();
     fetchRecentListening();
     setInterval(fetchRecentListening, 300000);

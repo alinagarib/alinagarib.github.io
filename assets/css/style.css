@@ -641,6 +641,74 @@ h3 {
   justify-content: center;
 }
 
+/* circular navigation used by recent-tracks carousel */
+.track-nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.circle-nav {
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.recent-album-art {
+  max-width: 225px;
+  height: auto;
+  display: block;
+}
+
+/* card keeps its shape; arrows are positioned inside */
+.top-artist-card {
+  position: relative;
+  padding: 0.5rem; /* kept tight like original; arrows overlap by negative offset */
+  background: rgba(255, 105, 180, 0.05);
+  border-radius: 15px;
+  margin-top: 0.1rem;
+  /* ensure size doesn't grow because of arrows */
+  box-sizing: border-box;
+}
+
+.top-artist-card h3 {
+  white-space: nowrap;
+}
+
+.top-artist-card .artist-content {
+  text-align: center;
+  /* keep inner content away from nav buttons */
+  padding: 0 20px;
+}
+
+.top-artist-card .small-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto !important;
+  flex-shrink: 0;
+  border-radius: 10%;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: white;
+}
+
+.small-button:hover{
+  background-color: hotpink;
+}
+
+.top-artist-card .artist-prev { left: 5px; }
+.top-artist-card .artist-next { right: 5px; }
+
 #gif-container img {
   width: 110px;  
   height: auto;   
@@ -669,21 +737,14 @@ h3 {
 }
 
 .stat-value {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: hotpink;
 }
 
 .stat-label {
-    margin-top: 0.15rem;
-    font-size: 0.85rem;
-}
-
-.top-artist-card {
-    margin-top: 0.1rem;
-    padding: 0.5rem;
-    background: rgba(255, 105, 180, 0.05);
-    border-radius: 15px;
+    margin-top: 0.20rem;
+    font-size: 0.95rem;
 }
 
 .artist-name {

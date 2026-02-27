@@ -29,10 +29,6 @@ This page is connected to an API endpoint I built and deployed via AWS Lambda, w
       <legend>This Week 𝄞⨾💿✮˚.⋆ </legend>
       <div id="recent-tracks-container" style="text-align:center;">
         <div id="recent-tracks"></div>
-        <div id="recent-tracks-buttons" style="margin-top:10px; display:none;">
-          <button id="prev" style="margin-right:5px;">&#8249; Prev</button>
-          <button id="next">Next &#8250;</button>
-        </div>
       </div>
       <div id="summary" style="margin-top:10px; font-size:1.1rem;">
         <p>Loading summary...</p>
