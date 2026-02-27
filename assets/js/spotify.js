@@ -113,38 +113,33 @@ async function fetchTopRecent() {
 
     function showTrack(index) {
         const track = tracks[index];
-        div.style.opacity = 0;
+        div.innerHTML = `
+        <p style="color: hotpink; font-weight: 600; font-size: 1.2rem;">${track.listen_count} recent listens</p>
+        <div class="track-nav-wrapper">
+            <button class="circle-nav" id="recent-prev">&#8249;</button>
+            ${track.album_art ? `<img class="recent-album-art" src="${track.album_art}" alt="${track.track_name} album cover">` : ""}
+            <button class="circle-nav" id="recent-next">&#8250;</button>
+        </div>
+        <p><strong style="color: rgb(50, 45, 139); font-weight: 600; font-size: 1.2rem;">${track.track_name}</strong></p>
+        <p style="padding: 0; margin-top: 0;"><strong>by ${track.artist_name}</strong></p>
+        <p><em>${track.album_name}</em></p>
+        `;
 
-        setTimeout(() => {
-            div.innerHTML = `
-            <p style="color: hotpink; font-weight: 600; font-size: 1.2rem;">${track.listen_count} recent listens</p>
-            <div class="track-nav-wrapper">
-                <button class="circle-nav" id="recent-prev">&#8249;</button>
-                ${track.album_art ? `<img class="recent-album-art" src="${track.album_art}" alt="${track.track_name} album cover">` : ""}
-                <button class="circle-nav" id="recent-next">&#8250;</button>
-            </div>
-            <p><strong style="color: rgb(50, 45, 139); font-weight: 600; font-size: 1.2rem;">${track.track_name}</strong></p>
-            <p style="padding: 0; margin-top: 0;"><strong>by ${track.artist_name}</strong></p>
-            <p><em>${track.album_name}</em></p>
-            `;
-            div.style.opacity = 1;
-
-            // attach handlers after DOM injection
-            const prevBtn = div.querySelector('#recent-prev');
-            const nextBtn = div.querySelector('#recent-next');
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
-                    showTrack(currentIndex);
-                });
-            }
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % tracks.length;
-                    showTrack(currentIndex);
-                });
-            }
-        }, 200);
+        // attach handlers after DOM injection
+        const prevBtn = div.querySelector('#recent-prev');
+        const nextBtn = div.querySelector('#recent-next');
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+                showTrack(currentIndex);
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % tracks.length;
+                showTrack(currentIndex);
+            });
+        }
     }
 
     showTrack(currentIndex);
