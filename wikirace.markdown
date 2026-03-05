@@ -4,14 +4,22 @@ title: WikiRace
 permalink: /wikirace/
 ---
 
-This a WikiRace solver connected to a FastAPI endpoint I built and deployed via AWS Lambda.
-To use it, enter start and end wikipedia links, as they appear in the url.
+This a WikiRace solver connected to an API I built and deployed via AWS Lambda.
 
-EX: https://en.wikipedia.org/wiki/Death_from_laughter
+**How to use:**
 
-Click the 'Find Shortest Path Length' button to show the minimum amount of clicks to get from link A to B. If you want to see an optimal path (as there may be many with the same length), a button will appear to reveal the solution! Otherwise, you can reset and try another set of links.
+1. Enter your start and end Wikipedia URLs as they appear in the URL bar
+   - EX:   https://en.wikipedia.org/wiki/Death_from_laughter
+   - ⓘ Only English Wikipedia pages are accepted
 
-WARNING: Please be aware that this BFS scales very quickly. If your links are highly unrelated, AWS Lambda times out after 15 minutes, and this will not return a result. 
+2. Click the **'Find Shortest Path Length'** button to calculate the minimum number of clicks needed to get from link A to B
+
+3. Once calculated, click the **'Reveal Path'** button to see the path from A to B
+   - This is guaranteed to return the minimum number of clicks, though multiple valid paths may exist
+
+4. Click **'Reset'** to try another pair of links
+
+**ⓘ Warning:** This BFS algorithm scales quickly due to network latency and Wikipedia's breadth. If your links are highly unrelated, AWS Lambda will timeout after 15 minutes and won't return a result. 
 
 <script src="/assets/js/wikirace.js"></script>
 <form id="wikirace-form" onsubmit="return false;">

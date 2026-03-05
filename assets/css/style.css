@@ -533,6 +533,7 @@ h3 {
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  height: 100%;
 }
 
 .about-me-container fieldset {
@@ -802,6 +803,11 @@ h3 {
 
 /* Mobile phones - portrait */
 @media (max-width: 767px) {
+  /* ensure resume iframe has some vertical space on phones */
+  .about-me-container fieldset:last-child {
+    min-height: 400px;
+  }
+
   #spotify-profile {
     position: static;
     margin: 10px;
