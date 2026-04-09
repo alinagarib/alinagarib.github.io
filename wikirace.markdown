@@ -9,7 +9,7 @@ This a WikiRace solver connected to an API I built and deployed via AWS Lambda.
 **How to use:**
 
 1. Enter your start and end Wikipedia URLs as they appear in the URL bar
-   - EX:   https://en.wikipedia.org/wiki/Death_from_laughter
+   - EX:  https://en.wikipedia.org/wiki/Death_from_laughter 
    - ⓘ Only English Wikipedia pages are accepted
 
 2. Click the **'Find Shortest Path Length'** button to calculate the minimum number of clicks needed to get from link A to B
