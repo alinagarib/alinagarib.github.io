@@ -79,8 +79,8 @@ permalink: /wikirace/
     <legend>How to Play</legend>
     <ol class="instructions-list">
       <p>WikiRace is a game where you try to navigate from one wikipedia page to another, using only the links on the page. This is a WikiRace solver I built and deployed via AWS Lambda.</p>
-      <li><strong>Enter URLs:</strong> Paste start and end Wikipedia links (e.g., <i>https://en.wikipedia.org/wiki/Death_from_laughter</i>).</li>
-      <li><strong>Calculate:</strong> Click <b>'Find Shortest Path Length'</b> to run the BFS algorithm.</li>
+      <li><strong>Enter URLs:</strong> Paste start and end as full Wikipedia links (e.g., <i>https://en.wikipedia.org/wiki/Death_from_laughter</i>).</li>
+      <li><strong>Calculate:</strong> Click <b>'Find Shortest Path Length'</b> to get the least amount of steps to get from the start to end link.</li>
       <li><strong>Reveal:</strong> Click <b>'Reveal Path'</b> to see the exact steps taken.</li>
       <li><strong>Reset:</strong> Use the <b>'Reset'</b> button to clear and start over.</li>
     </ol>
