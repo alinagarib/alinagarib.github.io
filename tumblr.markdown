@@ -14,6 +14,5 @@ permalink: /tumblr/
   <iframe 
     src="https://iammorethanagirl.tumblr.com/" 
     allowfullscreen 
-    title="Tumblr Feed">
   </iframe>
 </div>
