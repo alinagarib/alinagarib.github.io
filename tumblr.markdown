@@ -13,6 +13,6 @@ permalink: /tumblr/
 <div class="responsive-iframe-container">
   <iframe 
     src="https://iammorethanagirl.tumblr.com/" 
-    allowfullscreen 
+    allowfullscreen >
   </iframe>
 </div>
