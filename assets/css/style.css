@@ -177,7 +177,6 @@ button {
 button:hover {
   background-color: hotpink; 
   color: white; 
-  cursor: pointer;
 }
 
 fieldset {
@@ -292,16 +291,17 @@ legend {
   border-radius: 10px; 
   box-shadow: 0px 0px 6px rgba(255, 105, 180, 0.3);
   box-sizing: border-box;
+  max-height: 40vh;
 }
 
-#recent-listening {
-  max-height: 350px;
+/* #recent-listening { */
+  /* max-height: 350px;
 }
 
 #top-tracks,
 #top-artists {
-  max-height: 350px;
-}
+  max-height: 280px;
+} */
 
 .track {
   display: flex; 
@@ -508,9 +508,15 @@ h3 {
 .now-and-artists {
   display: flex;
   flex-direction: row;
-  flex: 1;
+  flex: 66;
   min-width: 0;
   gap: 20px;
+}
+
+.tracks-container {
+  display: flex;
+  flex-direction: column;
+  flex: 34;
 }
 
 .left-column {
