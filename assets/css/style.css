@@ -550,18 +550,19 @@ h3 {
   gap: 0;
 }
 
-
-.about-me-container {
+.general-content { 
   display: flex; 
   flex-direction: column;
   gap: 10px;
   width: 100%;
   height: 100%;
+  align-items: center;
 }
 
-.about-me-container fieldset {
+.general-content fieldset {
   flex: 1; 
   min-width: 0;
+  max-width: 800px;
 }
 
 .headshot {
@@ -573,10 +574,6 @@ h3 {
   border-radius: 75px; 
   object-fit: cover;
   border: 2px solid rgb(50, 45, 139);
-}
-
-.about-me-content {
-  overflow: auto; 
 }
 
 .search-container {
