@@ -8,7 +8,7 @@ title: Alina's World Wide Web
     <legend> ⋆｡‧˚ʚ About Me ɞ˚‧｡⋆</legend>
     <div class="about-me-content">
       <img src="/assets/images/headshots/DSC03029.JPEG" alt="headshot" class="headshot">
-      <p>Hi! My name is Alina Garib. I am a computer science student and a software engineer. I love creativity and life and ideas and gifs friendship. And this is my website :P</p>
+      <p>Hi! My name is Alina Garib. I am a computer science student and a software engineer. I love creativity and life and ideas and gifs and friendship. And this is my website :P</p>
       <p>Have a look around!</p>
     </div>
 
