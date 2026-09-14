@@ -114,13 +114,13 @@ async function fetchTopRecent() {
     function showTrack(index) {
         const track = tracks[index];
         div.innerHTML = `
-        <p style="color: hotpink; font-weight: 600; font-size: 1.2rem;">${track.listen_count} recent listens</p>
+        <p class="listen-count-label">${track.listen_count} recent listens</p>
         <div class="track-nav-wrapper">
             <button class="circle-nav" id="recent-prev">&#8249;</button>
             ${track.album_art ? `<img class="recent-album-art" src="${track.album_art}" alt="${track.track_name} album cover">` : ""}
             <button class="circle-nav" id="recent-next">&#8250;</button>
         </div>
-        <p><strong style="color: rgb(50, 45, 139); font-weight: 600; font-size: 1.2rem;">${track.track_name}</strong></p>
+        <p><strong class="top-track-name">${track.track_name}</strong></p>
         <p style="padding: 0; margin-top: 0;"><strong>by ${track.artist_name}</strong></p>
         <p><em>${track.album_name}</em></p>
         `;
@@ -161,7 +161,7 @@ async function fetchTopRecent() {
         <div class="top-artist-card">
             ${prevHtml}
             <div class="artist-content">
-                <h3 style="color: hotpink; margin-bottom: 0.25rem; padding: 0;"> ٠࣪⭑❀ Top Artists ❀˖°</h3>
+                <h3 class="top-artists-label"> ٠࣪⭑❀ Top Artists ❀˖°</h3>
                 ${imgSrc ? `<img src="${imgSrc}" alt="${artist.artist_name} image" style="border-radius: 50%; width: 75px; height: 75px; object-fit: cover; margin-bottom: 0.5rem;">` : ""}
                 <div class="artist-name">${artist.artist_name}</div>
                 <div class="artist-minutes">${artist.minutes_listened} minutes</div> 
