@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: hidden
 title: Newsletter
-permalink: /newsletter/
+permalink: /newsletter-signup/
 ---
 
 <div class="newsletter-container">

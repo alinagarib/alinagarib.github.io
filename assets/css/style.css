@@ -1,3 +1,5 @@
+@import "colors.css";
+
 @font-face {
     font-family: 'PixelifySans';
     src: url('../fonts/pixelify-sans-latin-400-normal.woff2') format('woff2'),
@@ -37,19 +39,29 @@
     margin: 0;
     line-height: 2;
     color: white;
-    text-shadow: -2px -2px 0 rgb(50, 45, 139), 
-    2px -2px 0 rgb(50, 45, 139), 
-    -2px 2px 0 rgb(50, 45, 139),  
-    2px 2px 0 rgb(50, 45, 139);
+    text-shadow: -2px -2px 0 var(--secondary-color), 
+    2px -2px 0 var(--secondary-color), 
+    -2px 2px 0 var(--secondary-color),  
+    2px 2px 0 var(--secondary-color);
   }
 
   .title-container {
     position: relative;
-    background-color: hotpink;
+    background-color: var(--primary-color);
     width: 100%;
     text-align: center;
     justify-content: center;
     align-items: center;
+  }
+
+  .hidden-title-container {
+    position: relative;
+    background-color: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--secondary-color);
   }
 
   .links-container {
@@ -93,9 +105,9 @@
   .navbar-container {
     position: relative;
     background-color: white; 
-    outline: 2px solid rgb(50, 45, 139); 
+    outline: 2px solid var(--secondary-color); 
     width: 100%; 
-    box-shadow: inset 0px 0px 15px rgba(50, 45, 139, 0.9); 
+    box-shadow: inset 0px 0px 15px rgba(var(--secondary-color), 0.9); 
     padding: 5px 0; 
     text-align: center; 
     margin: 0;
@@ -104,12 +116,12 @@
   .navbar-container a {
     display: inline-block; 
     background-color: white; 
-    outline: 2px solid rgb(50, 45, 139); 
-    color:  rgb(50, 45, 139); 
+    outline: 2px solid var(--secondary-color); 
+    color:  var(--secondary-color); 
     padding: 10px 20px; 
     text-decoration: none; 
     border-radius: 2px;
-    box-shadow: inset 0px 0px 10px rgba(50, 45, 139, 0.9);
+    box-shadow: inset 0px 0px 10px rgba(var(--secondary-color), 0.9);
     transition: background-color 0.3s ease;
   }
 
@@ -128,7 +140,7 @@
   }
   
   .navbar-container a:hover {
-    background-color: hotpink; 
+    background-color: var(--primary-color); 
   }
 
   .navbar-container img {
@@ -164,38 +176,38 @@
   font-weight: 400; 
   font-size: 1em;
   padding: 10px; 
-  border: 2px solid rgb(50, 45, 139); 
+  border: 2px solid var(--secondary-color); 
   border-radius: 5px; 
-  box-shadow: inset 0px 0px 10px rgba(50, 45, 139, 0.9);
+  box-shadow: inset 0px 0px 10px rgba(var(--secondary-color), 0.9);
   box-sizing: border-box;
 }
 
 #wikirace-form input[type="text"]:focus{
-  outline: 2px solid hotpink;
+  outline: 2px solid var(--primary-color);
 }
 
 button {
   display: inline-block; 
   background-color: white; 
-  outline: 2px solid rgb(50, 45, 139); 
-  color: rgb(50, 45, 139); 
+  outline: 2px solid var(--secondary-color); 
+  color: var(--secondary-color); 
   padding: 10px 20px;
   text-decoration: none; 
   border-radius: 1px;
-  box-shadow: inset 0px 0px 10px rgba(50, 45, 139, 0.9);
+  box-shadow: inset 0px 0px 10px rgba(var(--secondary-color), 0.9);
   transition: background-color 0.3s ease; 
   font-family: 'PixelifySans', sans-serif; 
   font-weight: 500; 
 }
 
 button:hover {
-  background-color: hotpink; 
+  background-color: var(--primary-color); 
   color: white; 
   cursor: pointer;
 }
 
 fieldset {
-  border: 2px solid rgb(50, 45, 139); 
+  border: 2px solid var(--secondary-color); 
   border-radius: 10px; 
   padding: 20px; 
   margin: 10px 0; 
@@ -207,7 +219,7 @@ legend {
   font-family: 'PixelifySans', sans-serif; 
   font-weight: 600; 
   font-size: clamp(1em, 3vw, 1.5em);
-  color: rgb(50, 45, 139); 
+  color: var(--secondary-color); 
 }
 
 .center-content {
@@ -240,7 +252,7 @@ legend {
   display: flex;
   align-items: center;
   gap: 10px;
-  color:rgb(50, 45, 139);         
+  color:var(--secondary-color);         
 }
 
 .profile-img {
@@ -302,9 +314,9 @@ legend {
 #top-artists {
   width: 100%; 
   overflow-y: auto;
-  border: 2px solid rgb(50, 45, 139); 
+  border: 2px solid var(--secondary-color); 
   border-radius: 10px; 
-  box-shadow: 0px 0px 6px rgba(255, 105, 180, 0.3);
+  box-shadow: 0px 0px 6px rgba(var(--secondary-color), 0.3);
   box-sizing: border-box;
   max-height: 40vh;
 }
@@ -365,7 +377,7 @@ legend {
 .track-album {
   text-align: right; 
   font-size: 0.9em; 
-  color: rgb(50, 45, 139);
+  color: var(--secondary-color);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -387,11 +399,11 @@ select {
   font-weight: 400; 
   font-size: 1em; 
   padding: 7px; 
-  border: 2px solid rgb(50, 45, 139); 
+  border: 2px solid var(--secondary-color); 
   border-radius: 5px; 
-  box-shadow: inset 0px 0px 10px rgba(50, 45, 139, 0.9);
+  box-shadow: inset 0px 0px 10px rgba(var(--secondary-color), 0.9);
   background-color: white; 
-  color: rgb(50, 45, 139); 
+  color: var(--secondary-color); 
   margin: 10px 0;
   max-width: 100%;
 }
@@ -408,7 +420,7 @@ select {
 .progress-container {
   width: 100%;      
   height: 4px;
-  background: pink;
+  background: var(--primary-accent);
   border-radius: 2px;
   overflow: hidden;
   margin-top: 1px;
@@ -416,9 +428,9 @@ select {
 
 .progress-bar {
   height: 100%;
-  background:  hotpink;
+  background:  var(--primary-color);
   transition: width 1s linear;
-  border-right: 1px solid rgb(50, 45, 139);
+  border-right: 1px solid var(--secondary-color);
 }
 
 .time-container {
@@ -426,14 +438,14 @@ select {
   justify-content: space-between; 
   font-family: 'PixelifySans', sans-serif; 
   font-size: 0.8em; 
-  color: rgb(50, 45, 139); 
+  color: var(--secondary-color); 
   margin-top: 2px; 
 }
 
 .progress-time {
   font-family: 'PixelifySans', sans-serif; 
   font-size: 0.9em; 
-  color: rgb(50, 45, 139); 
+  color: var(--secondary-color); 
   position: relative; 
 }
 
@@ -456,7 +468,7 @@ h2 {
   font-family: 'PixelifySans', sans-serif; 
   font-weight: 600; 
   font-size: clamp(1em, 3vw, 1.5em);
-  color: rgb(50, 45, 139); 
+  color: var(--secondary-color); 
   margin-bottom: 10px; 
   margin: 10px;
   padding: 0;
@@ -466,7 +478,7 @@ h3 {
   font-family: 'PixelifySans', sans-serif; 
   font-weight: 500; 
   font-size: clamp(0.9em, 2.5vw, 1.2em);
-  color: rgb(50, 45, 139); 
+  color: var(--secondary-color); 
   margin: 0;
   padding: 10px;
   text-align: center;
@@ -517,7 +529,7 @@ h3 {
 .artist-details .artist-genres {
   font-style: italic; 
   font-size: 0.9em; 
-  color: rgb(50, 45, 139); 
+  color: var(--secondary-color); 
 }
 
 .now-and-artists {
@@ -572,7 +584,7 @@ h3 {
   height: 125px; 
   border-radius: 75px; 
   object-fit: cover;
-  border: 2px solid rgb(50, 45, 139);
+  border: 2px solid var(--secondary-color);
 }
 
 .search-container {
@@ -594,22 +606,22 @@ h3 {
   font-weight: 400; 
   font-size: 1em;
   padding: 10px; 
-  border: 2px solid rgb(50, 45, 139); 
+  border: 2px solid var(--secondary-color); 
   border-radius: 5px; 
-  box-shadow: inset 0px 0px 10px rgba(50, 45, 139, 0.9);
+  box-shadow: inset 0px 0px 10px rgba(var(--secondary-color), 0.9);
   box-sizing: border-box;
 }
 
 #search-input:focus{
-  outline: 2px solid hotpink;
+  outline: 2px solid var(--primary-color);
 }
 
 #search-results {
   display: none;
   max-height: 150px;
   overflow-y: auto;
-  border: 2px solid hotpink;
-  box-shadow: 0px 0px 6px rgba(255, 105, 180, 0.3);
+  border: 2px solid var(--primary-color);
+  box-shadow: 0px 0px 6px rgba(var(--primary-color), 0.3);
   border-radius: 5px; 
   padding: 10px;
   margin: 10px;
@@ -693,7 +705,7 @@ h3 {
 .top-artist-card {
   position: relative;
   padding: 0.5rem; /* kept tight like original; arrows overlap by negative offset */
-  background: rgba(255, 105, 180, 0.05);
+  background: rgba(var(--primary-color), 0.05);
   border-radius: 15px;
   margin-top: 0.1rem;
   /* ensure size doesn't grow because of arrows */
@@ -723,7 +735,7 @@ h3 {
 }
 
 .small-button:hover{
-  background-color: hotpink;
+  background-color: var(--primary-color);
 }
 
 .top-artist-card .artist-prev { left: 5px; }
@@ -752,14 +764,14 @@ h3 {
 
 .stat-item {
     padding: 0.5rem;
-    background: rgba(255, 105, 180, 0.1);
+    background: rgba(var(--primary-color), 0.1);
     border-radius: 10px;
 }
 
 .stat-value {
     font-size: 1.2rem;
     font-weight: bold;
-    color: hotpink;
+    color: var(--primary-color);
 }
 
 .stat-label {
@@ -774,7 +786,7 @@ h3 {
 }
 
 .artist-minutes {
-    color: #666;
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
@@ -977,7 +989,7 @@ h3 {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(50, 45, 139, 0.7); 
+    background-color: rgba(var(--secondary-color), 0.7); 
     overflow: auto; 
 }
 
@@ -987,9 +999,9 @@ h3 {
     max-width: 500px; 
     background-color: #fefefe;
     padding: 20px;
-    border: 1px solid rgb(255, 105, 180);
+    border: 1px solid var(--primary-color);
     border-radius: 8px;
-    box-shadow: 0px 0px 6px rgba(255, 105, 180, 0.3);
+    box-shadow: 0px 0px 6px rgba(var(--primary-color), 0.3);
 }
 
 .close-button {
@@ -1002,7 +1014,7 @@ h3 {
 
 .close-button:hover,
 .close-button:focus {
-    color: #000;
+    color: var(--close-button);
     text-decoration: none;
     cursor: pointer;
 }
@@ -1067,15 +1079,15 @@ iframe {
   font-weight: 400; 
   font-size: 1em;
   padding: 10px; 
-  border: 2px solid rgb(50, 45, 139); 
+  border: 2px solid var(--secondary-color); 
   border-radius: 5px; 
-  box-shadow: inset 0px 0px 10px rgba(50, 45, 139, 0.9);
+  box-shadow: inset 0px 0px 10px rgba(var(--secondary-color), 0.9);
   box-sizing: border-box;
   flex: 1;
 }
 
 .newsletter-container input[type="text"]:focus{
-  outline: 2px solid hotpink;
+  outline: 2px solid var(--primary-color);
 }
 
 .newsletter-input-box{
@@ -1091,6 +1103,6 @@ iframe {
   font-family: 'PixelifySans', sans-serif; 
   font-weight: 500; 
   font-size: 1em;
-  color: hotpink;
+  color: var(--secondary-color);
   margin-top: 10px;
 }
