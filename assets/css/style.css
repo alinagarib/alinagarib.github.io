@@ -67,6 +67,21 @@
     cursor: pointer; 
   }
 
+  .links-container-right {
+    position: absolute;
+    right: 10px;
+    transform: translateY(50%); 
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .links-container-right img {
+    width: 25px;
+    height: auto;
+    cursor: pointer; 
+  }
+
   .nyan-cat {
     position: absolute;
     left: -10px;         
@@ -177,6 +192,7 @@ button {
 button:hover {
   background-color: hotpink; 
   color: white; 
+  cursor: pointer;
 }
 
 fieldset {
@@ -1012,4 +1028,46 @@ iframe {
 
   padding: 10px;
 
+}
+
+/* newsletter page css */
+
+.newsletter-container {
+  display: flex; 
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.newsletter-container fieldset {
+  flex: 1; 
+  min-width: 0;
+  max-width: 800px;
+}
+
+.newsletter-container input[type="text"] {
+  width: 70%;
+  font-family: 'PixelifySans', sans-serif; 
+  font-weight: 400; 
+  font-size: 1em;
+  padding: 10px; 
+  border: 2px solid rgb(50, 45, 139); 
+  border-radius: 5px; 
+  box-shadow: inset 0px 0px 10px rgba(50, 45, 139, 0.9);
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+
+.newsletter-container input[type="text"]:focus{
+  outline: 2px solid hotpink;
+}
+
+#form-feedback-message {
+  font-family: 'PixelifySans', sans-serif; 
+  font-weight: 500; 
+  font-size: 1em;
+  color: hotpink;
+  margin-top: 10px;
 }
