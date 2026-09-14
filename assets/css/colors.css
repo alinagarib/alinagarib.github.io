@@ -1,7 +1,10 @@
 :root {
-    --primary-color: #ff69b4;
-    --secondary-color: #322d8b;
-    --primary-accent: #ffc0cb;
-    --text-secondary: #666;
+    --primary-color: rgb(255, 105, 180);
+    --primary-color-rgb: 255, 105, 180;
+    --secondary-color: rgb(50, 45, 139);
+    --secondary-color-rgb: 50, 45, 139;
+    --primary-accent: rgb(255, 192, 203);
+    --primary-accent-rgb: 255, 192, 203;
+    --text-secondary: rgb(102, 102, 102);
     --close-button: #000;
 }
