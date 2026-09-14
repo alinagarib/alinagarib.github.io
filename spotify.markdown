@@ -1,5 +1,5 @@
 ---
-layout: spotify
+layout: default
 title: My Spotify Stats
 permalink: /spotify/
 ---
