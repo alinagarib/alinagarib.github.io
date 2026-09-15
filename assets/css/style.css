@@ -956,6 +956,11 @@ h3 {
   #newsletter-button {
     width: 100%;
   }
+
+  .search-controls {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 /* Small mobile phones */
@@ -1010,6 +1015,11 @@ h3 {
 
   #newsletter-button {
     width: 100%;
+  }
+
+  .search-controls {
+    flex-direction: column;
+    gap: 5px;
   }
 }
 
