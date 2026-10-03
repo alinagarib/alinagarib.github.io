@@ -17,6 +17,8 @@ permalink: /newsletter/
             Subscribe</button>
         </div>
             <div id="form-feedback-message" style="margin-top: 10px; font-weight: bold;"></div>
+        <a class="newsletter-unsubscribe-link" href="/newsletter-unsubscribe/">Looking to unsubscribe? Click me!</a>
+
     </fieldset>
     </form>
 </div>

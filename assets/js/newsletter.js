@@ -1,4 +1,3 @@
-
 const SUBMIT_URL = 'https://script.google.com/macros/s/AKfycbxHA70bfrp2BWj2hDAog4dIoEOP0l16B4eFumUAltTDHPqXLAG8rZeCSazNpieLVxJz6g/exec';
 
 document.getElementById('newsletter-button').addEventListener('click', async (e) => {

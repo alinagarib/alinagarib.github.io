@@ -1208,6 +1208,13 @@ iframe {
   max-width: 800px;
 }
 
+.newsletter-unsubscribe-link {
+  display: block;
+  width: fit-content;
+  color: var(--secondary-color);
+  text-align: right;
+}
+
 .newsletter-container input[type="text"] {
   width: 100%;
   font-family: 'PixelifySans', sans-serif; 
