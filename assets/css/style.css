@@ -579,6 +579,98 @@ h3 {
   align-items: center;
 }
 
+.rose-hover-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3702 / 2248;
+  container-type: inline-size;
+}
+
+.rose-hover-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rose-hover-hotspot {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.rose-hover-hotspot--rose {
+  left: 0;
+  width: 33.3333%;
+}
+
+.rose-hover-hotspot--bud {
+  left: 33.3333%;
+  width: 33.3333%;
+}
+
+.rose-hover-hotspot--thorn {
+  left: 66.6666%;
+  width: 33.3334%;
+}
+
+.rose-hover-note {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  box-sizing: border-box;
+  width: min(16rem, calc(100cqi - 1rem));
+  padding: 0.75rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 4px;
+  background: var(--primary-background);
+  color: var(--text-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  font: 400 1rem/1.4 'PixelifySans', sans-serif;
+  text-align: left;
+  overflow-wrap: anywhere;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+  transition: opacity 150ms ease;
+  pointer-events: none;
+}
+
+.rose-hover-hotspot--rose .rose-hover-note {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.rose-hover-hotspot--thorn .rose-hover-note {
+  right: 0;
+  left: auto;
+  transform: translateY(-50%);
+}
+
+.rose-hover-hotspot:hover,
+.rose-hover-hotspot:focus-visible {
+  z-index: 2;
+  background: transparent;
+  cursor: default;
+}
+
+.rose-hover-hotspot:hover .rose-hover-note,
+.rose-hover-hotspot:focus .rose-hover-note {
+  opacity: 1;
+  visibility: visible;
+}
+
+.rose-hover-hotspot:focus-visible {
+  outline: 2px dashed var(--secondary-color);
+  outline-offset: -4px;
+}
+
 .general-content fieldset {
   flex: 1; 
   min-width: 0;
